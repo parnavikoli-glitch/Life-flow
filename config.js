@@ -4,5 +4,5 @@
   2. Paste it below.
 */
 const APP_CONFIG = {
-  GAS_WEB_APP_URL: "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE"
+  GAS_WEB_APP_URL: "https://script.google.com/macros/s/AKfycbxWOdnNJzghvst0SG9bCPvvx-h4xdm1M6QewXUkh9EUBCcD01CYAXKWp_eXe0QVFAjT/exec"
 };
