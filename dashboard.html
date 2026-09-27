@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeFlow — Campaign Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-page">
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">+</span><span>Life<span>Flow</span></span></a>
+    <a href="index.html" class="nav-cta">← Registration</a>
+  </div>
+</header>
+
+<main class="dashboard">
+  <div class="container">
+    <div class="dashboard-heading">
+      <div><div class="section-label">CAMPAIGN ANALYTICS</div><h1>Donor registry overview</h1><p>Aggregate metrics from your connected Google Sheet.</p></div>
+      <button id="refreshBtn" class="btn btn-primary">Refresh data ↻</button>
+    </div>
+
+    <div id="loginCard" class="admin-login">
+      <h2>Admin access</h2>
+      <p>Enter the dashboard key configured in your Google Apps Script.</p>
+      <div class="login-row"><input id="adminKey" type="password" placeholder="Dashboard key"><button id="loginBtn" class="btn btn-primary">View analytics</button></div>
+      <p id="loginMessage" class="form-message"></p>
+    </div>
+
+    <div id="analytics" class="hidden">
+      <div class="metric-grid">
+        <div class="metric-card"><span>Total registrations</span><strong id="mTotal">—</strong><small>All submitted records</small></div>
+        <div class="metric-card"><span>Willing donors</span><strong id="mWilling">—</strong><small>Answered “Yes”</small></div>
+        <div class="metric-card"><span>Emergency-ready</span><strong id="mEmergency">—</strong><small>Wants emergency notifications</small></div>
+        <div class="metric-card"><span>Digital registry value</span><strong id="mImportance">—</strong><small>Average 1–5 score*</small></div>
+      </div>
+
+      <div class="analytics-grid">
+        <div class="analytics-card"><div class="card-title"><h2>Blood-group mix</h2><span>Responses</span></div><div id="bloodChart" class="bar-chart"></div></div>
+        <div class="analytics-card"><div class="card-title"><h2>Age groups</h2><span>Registrations</span></div><div id="ageChart" class="bar-chart"></div></div>
+        <div class="analytics-card"><div class="card-title"><h2>Donation history</h2><span>Responses</span></div><div id="historyChart" class="bar-chart"></div></div>
+        <div class="analytics-card"><div class="card-title"><h2>Emergency directory value</h2><span>Responses</span></div><div id="usefulChart" class="bar-chart"></div></div>
+      </div>
+      <p class="dashboard-note">* The form's registry-importance question includes “Not important”, 1–5, and “Extremely important”; only numeric 1–5 responses are averaged.</p>
+    </div>
+  </div>
+</main>
+<script src="config.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

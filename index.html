@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blood Donation Camp registration and donor awareness portal.">
+  <title>LifeFlow — Blood Donation Camp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>🩸 Every donation can help save lives.</span>
+      <a href="#register">Register as a donor →</a>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark">+</span>
+        <span>Life<span>Flow</span></span>
+      </a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#why">Why donate?</a>
+        <a href="#register" class="nav-cta">Register now</a>
+      </nav>
+      <button class="menu-btn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse"></span> BLOOD DONATION CAMP 2026</div>
+          <h1>Your one decision can become <em>someone's second chance.</em></h1>
+          <p>Join our digital donor registry. Register once and help make it easier to connect people with blood donors when they need them.</p>
+          <div class="hero-actions">
+            <a href="#register" class="btn btn-primary">Register as a donor <span>→</span></a>
+            <a href="#about" class="btn btn-ghost">Learn more</a>
+          </div>
+          <div class="trust-row">
+            <div><strong>01</strong><span>Quick registration</span></div>
+            <div><strong>02</strong><span>Digital registry</span></div>
+            <div><strong>03</strong><span>Emergency-ready</span></div>
+          </div>
+        </div>
+        <div class="hero-card-wrap">
+          <div class="blood-orb">
+            <div class="orb-drop">♥</div>
+            <div class="orb-text"><b>Donate</b><span>Hope</span></div>
+          </div>
+          <div class="floating-card card-one"><span class="mini-icon">🩸</span><div><b>Blood group</b><small>Find the right match</small></div></div>
+          <div class="floating-card card-two"><span class="mini-icon">⚡</span><div><b>Emergency ready</b><small>Connect faster</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container two-col">
+        <div>
+          <div class="section-label">ABOUT THE CAMP</div>
+          <h2>Turn a simple registration into a stronger donor network.</h2>
+        </div>
+        <div>
+          <p class="lead">This portal collects donor information and awareness responses so the campaign team can understand the community, maintain a digital registry and plan future donation drives.</p>
+          <div class="feature-list">
+            <div><span>✓</span><p><b>Simple digital registration</b><br>Mobile-friendly form with all campaign questions.</p></div>
+            <div><span>✓</span><p><b>Central Google Sheet</b><br>Every submitted registration is stored in your connected sheet.</p></div>
+            <div><span>✓</span><p><b>Live campaign analytics</b><br>See registrations, blood-group mix and donor trends.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section why">
+      <div class="container">
+        <div class="section-label">WHY DONATE?</div>
+        <div class="stats-strip">
+          <div><strong>01</strong><h3>Be there</h3><p>for someone during a critical moment.</p></div>
+          <div><strong>02</strong><h3>Build awareness</h3><p>and encourage regular voluntary donation.</p></div>
+          <div><strong>03</strong><h3>Strengthen access</h3><p>to a better organized donor network.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="register" class="section register">
+      <div class="container register-grid">
+        <div class="register-intro">
+          <div class="section-label">DONOR REGISTRATION</div>
+          <h2>Register your details.</h2>
+          <p>Complete the form below. Your submission is sent to the campaign's Google Sheet through the configured backend.</p>
+          <div class="privacy-note"><span>🔒</span><div><b>Privacy note</b><p>Collect only information you need for your campaign. Do not enter passwords or sensitive medical information in this form.</p></div></div>
+        </div>
+
+        <form id="donorForm" class="form-card" method="POST" target="submitFrame">
+          <div class="form-progress"><span id="progressBar"></span></div>
+          <div class="form-head"><span>01 / 04</span><b>About you</b></div>
+
+          <div class="form-section">
+            <label>Full name <span>*</span><input name="fullName" required maxlength="100" placeholder="Enter your full name"></label>
+            <div class="form-row">
+              <label>Age group <span>*</span>
+                <select name="ageGroup" required>
+                  <option value="">Select</option><option>Below 18</option><option>18–25</option><option>26–35</option><option>Above 35</option>
+                </select>
+              </label>
+              <label>Gender <span>*</span>
+                <select name="gender" required>
+                  <option value="">Select</option><option>Male</option><option>Female</option><option>Other</option><option>Prefer not to say</option>
+                </select>
+              </label>
+            </div>
+            <label>Blood group <span>*</span>
+              <select name="bloodGroup" required>
+                <option value="">Select your blood group</option><option>A+ / A-</option><option>B+ / B-</option><option>AB+ / AB-</option><option>O+ / O-</option><option>Don't know</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-section">
+            <div class="form-head"><span>02 / 04</span><b>Donation history</b></div>
+            <label>Have you donated blood before? <span>*</span>
+              <select name="donatedBefore" required><option value="">Select</option><option>Yes</option><option>No</option></select>
+            </label>
+            <label>How many times have you donated blood? <span>*</span>
+              <select name="donationCount" required><option value="">Select</option><option>Never</option><option>1-2 times</option><option>3-5 times</option><option>More than 5 times</option></select>
+            </label>
+            <label>When was your last blood donation? <span>*</span>
+              <select name="lastDonation" required><option value="">Select</option><option>Within 3 months</option><option>3-6 months ago</option><option>6-12 months ago</option><option>More than 1 year ago</option><option>Never donated</option></select>
+            </label>
+            <label>Would you be willing to donate blood when required? <span>*</span>
+              <select name="willing" required><option value="">Select</option><option>Yes</option><option>No</option><option>Maybe</option></select>
+            </label>
+          </div>
+
+          <div class="form-section">
+            <div class="form-head"><span>03 / 04</span><b>Emergency access</b></div>
+            <label>How would you prefer to be contacted during an emergency? <span>*</span>
+              <select name="contactPreference" required><option value="">Select</option><option>Phone call</option><option>SMS</option><option>Email</option><option>App notification</option></select>
+            </label>
+            <label>Have you ever faced difficulty finding a blood donor during an emergency? <span>*</span>
+              <select name="emergencyDifficulty" required><option value="">Select</option><option>Yes</option><option>No</option><option>Not sure</option></select>
+            </label>
+            <label>How do people usually find blood donors? <span>*</span>
+              <select name="findDonors" required><option value="">Select</option><option>Friends and relatives</option><option>Hospitals</option><option>Social media</option><option>Blood banks</option><option>All of the above</option></select>
+            </label>
+            <label>How useful would a blood donor directory be during emergencies? <span>*</span>
+              <select name="directoryUseful" required><option value="">Select</option><option>Very useful</option><option>Useful</option><option>Slightly useful</option><option>Not useful</option></select>
+            </label>
+          </div>
+
+          <div class="form-section">
+            <div class="form-head"><span>04 / 04</span><b>Registry & feedback</b></div>
+            <label>How should donors be searched in the database? <span>*</span>
+              <select name="searchMethod" required><option value="">Select</option><option>Blood group</option><option>Location</option><option>Availability</option><option>Blood group + location</option></select>
+            </label>
+            <label>Would you like to receive emergency blood donation notifications? <span>*</span>
+              <select name="emergencyNotifications" required><option value="">Select</option><option>Yes</option><option>No</option><option>Maybe</option></select>
+            </label>
+            <label>Should the system show whether a donor is currently available? <span>*</span>
+              <select name="showAvailability" required><option value="">Select</option><option>Yes</option><option>No</option><option>Maybe</option></select>
+            </label>
+            <label>Do you think the database can reduce the time needed to find a blood donor? <span>*</span>
+              <select name="reduceTime" required><option value="">Select</option><option>Yes</option><option>No</option><option>Not sure</option></select>
+            </label>
+            <label>Which additional feature would you like to have? <span>*</span>
+              <select name="additionalFeature" required><option value="">Select</option><option>Emergency alerts</option><option>Location tracking</option><option>Donor history</option><option>Hospital/blood-bank information</option><option>All of the above</option></select>
+            </label>
+            <label>Best way to encourage more people to become regular blood donors? <span>*</span>
+              <select name="encouragement" required><option value="">Select</option><option>Public awareness campaigns</option><option>Incentives and rewards</option><option>Mobile donation drives</option><option>Better recognition for donors</option><option>Streamlined registration processes</option></select>
+            </label>
+            <label>Importance of maintaining an updated digital donor registry? <span>*</span>
+              <select name="registryImportance" required><option value="">Select</option><option>Not important</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>Extremely important</option></select>
+            </label>
+            <label>Additional thoughts on improving safety or efficiency
+              <textarea name="additionalThoughts" rows="4" maxlength="1000" placeholder="Optional"></textarea>
+            </label>
+          </div>
+
+          <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="source" value="github-pages">
+          <button class="btn btn-primary submit-btn" type="submit"><span id="submitText">Submit registration</span><span>→</span></button>
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
+        <iframe name="submitFrame" id="submitFrame" class="hidden-frame" title="Form submission"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="brand"><span class="brand-mark">+</span><span>Life<span>Flow</span></span></div>
+      <p>Blood Donation Camp • Digital Registration Portal</p>
+      <a href="dashboard.html">Campaign dashboard →</a>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
